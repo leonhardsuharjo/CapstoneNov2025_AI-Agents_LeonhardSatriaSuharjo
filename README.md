@@ -43,5 +43,7 @@ This project is submitted as a part of the Kaggle and Google AI Agents intensive
 - Tool functionality tests
 - Workflow integration tests
 - Risk detection validation
-
 ---
+
+## Project main flowchart
+![Project Flowchart](image.png)
