@@ -89,11 +89,13 @@ supply-chain-price-monitor/
 - Static supplier data (not live market data)
 
 ### Future Enhancements
-- Real supplier API integrations
-- Historical price trending
-- Automated alerting (email/SMS)
-- Multi-component tender cost calculation
 - Currency conversion for international suppliers
+- Replace simulated database with actual supplier APIs
+- Implement Tokopedia/Alibaba/Mouser Electronics connectors
+- Add API rate limiting and error handling
+- Store price history in SQLite database
+- Add TrendAnalysisAgent to detect long-term patterns
+- Visualize price trends over 3-6 months
 
 ---
 
