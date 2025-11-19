@@ -47,3 +47,66 @@ This project is submitted as a part of the Kaggle and Google AI Agents intensive
 
 ## Project main flowchart
 ![Project Flowchart](image.png)
+
+---
+
+## Project Structure
+
+```
+supply-chain-price-monitor/
+├── main.py                    # Main agent code
+│   ├── Custom function tools
+│   ├── Three sequential agents
+│   └── Runner logic
+│
+├── supplier_database.py       # Simulated supplier data
+│   ├── Component catalog
+│   ├── Price data (3 suppliers)
+│   └── Database query functions
+│
+├── test_agent.py              # Agent evaluation
+│   ├── Tool tests
+│   ├── Workflow tests
+│   └── Integration tests
+│
+├── requirements.txt           # Dependencies
+└── README.md                  # This file
+```
+
+---
+
+## Project End-Notes
+
+### Time Investment
+- **Development:** 4-6 hours
+- **Testing:** 1 hour
+- **Documentation:** 1 hour
+
+### Simplifications
+- Uses simulated database (not real API calls)
+- Terminal interface (no web UI)
+- Static supplier data (not live market data)
+
+### Future Enhancements
+- Real supplier API integrations
+- Historical price trending
+- Automated alerting (email/SMS)
+- Multi-component tender cost calculation
+- Currency conversion for international suppliers
+
+---
+
+## Acknowledgments
+
+- **Google & Kaggle:** 5-Day AI Agents Course
+- **Course Instructors:** For comprehensive ADK training
+
+---
+
+## Contact
+
+**Leonhard Satria Suharjo**  
+University of Messina - Data Analysis  
+[GitHub](https://github.com/leonhardsuharjo) | [LinkedIn](https://linkedin.com/in/leonhard-satria-suharjo)
+
+---
