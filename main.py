@@ -175,3 +175,55 @@ root_agent = SequentialAgent(
     sub_agents=[price_check_agent, comparison_agent, recommendation_agent]
 )
 
+# --- ---
+# RUNNER (From both Day 1b and Day 2a)
+# --- --- 
+
+def run_price_monitor(component_code: str):
+    '''Run the price monitoring agent system.'''
+
+    print(f"\n{'='*70}")
+    print(f"SMART MATERIAL PRICE MONITOR")
+    print(f"Component: {COMPONENTS.get(component_code, 'Unknown')}")
+    print(f"{'='*70}\n")
+
+    # Create runner - SOURCE: Day 1b Section 3
+    runner = InMemoryRunner(agent=root_agent)
+
+    # Run agent with user query
+    import asyncio
+
+    async def async_run():
+        response = await runner.run_debug(
+            f"Check prices for component: {component_code}"
+        )
+        return response
+
+    # Execute
+    response = asyncio.run(async_run())
+
+    print(f"\n{'='*70}")
+    print("MONITORING COMPLETE")
+    print(f"{'='*70}\n")
+
+# --- ---
+# MAIN EXECUTION 
+# --- --- 
+
+if __name__ == "__main__":
+    # Set API key
+    if "GOOGLE_API_KEY" not in os.environ:
+        api_key = input("Enter your GOOGLE_API_KEY: ").strip()
+        os.environ["GOOGLE_API_KEY"] = api_key
+
+    print("\nAvailable components:")
+    for code, name in COMPONENTS.items():
+        print(f"  {code}: {name}")
+
+    # Get user input
+    component = input("\nEnter component code to monitor (or press Enter for ESP32_WIFI): ").strip()
+    if not component:
+        component = "ESP32_WIFI"
+
+    # Run the agent system
+    run_price_monitor(component)
